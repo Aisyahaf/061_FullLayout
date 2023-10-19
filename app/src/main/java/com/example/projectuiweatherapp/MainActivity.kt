@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.absoluteOffset
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -58,12 +59,19 @@ fun Homescreen( modifier: Modifier = Modifier) {
 
     ){
         Text(
-            text = "Aisah A Fitriani 20210140061",
+            text = "Aisah A Fitriani",
             fontSize = 30.sp,
             color = Color.Black,
             textAlign = TextAlign.Center,
             fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(top = 20.dp)
+        )
+        Text(
+            text = "20210140061",
+            fontSize = 30.sp,
+            color = Color.Black,
+            textAlign = TextAlign.Center,
+            fontWeight = FontWeight.Bold
         )
         
         Spacer(modifier = Modifier.padding(13.dp))
@@ -160,25 +168,75 @@ fun Kotak_1(modifier: Modifier = Modifier){
             .background(color = Color.LightGray)
     ) {
         Row (
-            verticalAlignment = Alignment.CenterVertically,
-            modifier = modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceAround,
+            verticalAlignment = Alignment.CenterVertically
+
         )
         {
-            Text(
-                text = "Humidity",
-                fontSize = 20.sp,
-                color = Color.Black,
-                textAlign = TextAlign.Center,
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier.fillMaxHeight(),
+                verticalArrangement = Arrangement.Center
+            ) {
+                Text(
+                    text = "Humidity",
+                    fontSize = 20.sp,
+                    color = Color.Black,
+                    modifier = Modifier.padding(5.dp)
+                )
+                Text(
+                    text = "98%",
+                    fontSize = 25.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.Black
+                )
 
-            )
-            Spacer(modifier = Modifier.padding(100.dp))
+                Spacer(modifier = Modifier.padding(10.dp))
 
-            Text(
-                text = "UV Index",
-                fontSize = 20.sp,
-                color = Color.Black,
-                textAlign = TextAlign.Center,
-            )
+                Text(
+                    text = "Sunrise",
+                    fontSize = 20.sp,
+                    color = Color.Black,
+                    modifier = Modifier.padding(5.dp)
+                )
+                Text(
+                    text = "05.00 AM",
+                    fontSize = 25.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.Black
+                )
+            }
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier.fillMaxHeight(),
+                verticalArrangement = Arrangement.Center
+            ) {
+                Text(
+                    text = "UV Index",
+                    fontSize = 20.sp,
+                    color = Color.Black, modifier = Modifier.padding(5.dp)
+                )
+                Text(
+                    text = "9/10",
+                    fontSize = 25.sp,
+                    fontWeight = FontWeight.Bold
+                )
+
+                Spacer(modifier = Modifier.padding(10.dp))
+
+                Text(
+                    text = "Sunset",
+                    fontSize = 20.sp,
+                    color = Color.Black,
+                    modifier = Modifier.padding(5.dp)
+                )
+                Text(
+                    text = "05.45 PM",
+                    fontSize = 25.sp,
+                    fontWeight = FontWeight.Bold
+                )
+            }
         }
     }
 }
